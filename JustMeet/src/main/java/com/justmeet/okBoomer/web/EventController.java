@@ -3,10 +3,6 @@ package com.justmeet.okBoomer.web;
 import java.security.Principal;
 import java.sql.Date;
 import java.util.ArrayList;
-import java.util.List;
-
-import javax.persistence.EntityNotFoundException;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.repository.query.Param;
 import org.springframework.lang.Nullable;
@@ -14,18 +10,12 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.justmeet.okBoomer.model.Category;
 import com.justmeet.okBoomer.model.Event;
 import com.justmeet.okBoomer.model.User;
-import com.justmeet.okBoomer.repository.EventRepository;
-import com.justmeet.okBoomer.repository.UserRepository;
 import com.justmeet.okBoomer.service.EventService;
 import com.justmeet.okBoomer.service.UserService;
 

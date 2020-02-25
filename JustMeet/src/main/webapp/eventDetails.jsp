@@ -27,7 +27,7 @@
 		</div>
 		<p class="card-text">Data Evento: ${eventDetail.dataEvento}</p>
 		<p class="card-text">${eventDetail.id}</p>       
-   		<a href="addRequest" class="btn btn-lg btn-primary btn-block">Invia richiesta di partecipazione</a>              
+   		<a href="addRequest?id=${eventDetail.id}" class="btn btn-lg btn-primary btn-block">Invia richiesta di partecipazione</a>              
        		
   </div>
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>

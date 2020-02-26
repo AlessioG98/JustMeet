@@ -14,12 +14,10 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
-<<<<<<< HEAD
+
 import javax.persistence.ManyToOne;
 import javax.persistence.MapsId;
 import javax.persistence.OneToMany;
-=======
->>>>>>> 48f8a6d3e912b411875b4750daf200bcda0cf980
 
 
 

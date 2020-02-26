@@ -17,13 +17,11 @@ import com.justmeet.okBoomer.model.Category;
 import com.justmeet.okBoomer.model.Event;
 import com.justmeet.okBoomer.model.EventUser;
 import com.justmeet.okBoomer.model.User;
-<<<<<<< HEAD
+
 
 import com.justmeet.okBoomer.repository.EventRepository;
 import com.justmeet.okBoomer.repository.EventUserRepository;
 import com.justmeet.okBoomer.repository.UserRepository;
-=======
->>>>>>> 48f8a6d3e912b411875b4750daf200bcda0cf980
 
 import com.justmeet.okBoomer.service.EventService;
 import com.justmeet.okBoomer.service.EventUserService;

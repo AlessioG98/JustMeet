@@ -44,5 +44,7 @@
 			</div>
 		</div>
 	</header>
+	
+		<%@include file="assets/footer.html"%>
 </body>
 </html>

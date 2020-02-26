@@ -73,18 +73,11 @@ public class EventController {
 		return ("eventDetails");
 	}
 
-	@GetMapping("/searchMyEvents")
-	public String findMyEvents(Model model) {
-		model.addAttribute("mySearchResult", new Event());
-		return ("searchMyEvents");
-	}
 
-	@PostMapping("/searchMyEvents")
-	public String findMyEvents(Principal user, Model model,
-			@ModelAttribute("mySearchResult") ArrayList<Event> mySearchResult) {
+	@GetMapping("/myEvents")
+	public String findMyEvents(Principal user, Model model) {
 
-		mySearchResult.addAll(eventService.findByUserUsername(user));
-		model.addAllAttributes(mySearchResult);
+		model.addAttribute("mySearchResult",eventService.findByUserUsername(user));
 		return ("myEvents");
 
 	}

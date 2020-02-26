@@ -22,6 +22,7 @@ import javax.persistence.OneToMany;
 >>>>>>> 48f8a6d3e912b411875b4750daf200bcda0cf980
 
 
+
 import javax.persistence.Table;
 import javax.persistence.Transient;
 

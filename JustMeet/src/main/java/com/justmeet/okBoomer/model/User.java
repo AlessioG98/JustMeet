@@ -2,7 +2,6 @@ package com.justmeet.okBoomer.model;
 /*login class*/
 import javax.persistence.*;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 
@@ -31,10 +30,9 @@ public class User {
     private Set<Role> roles;
     
     
-    @ManyToMany
-    private List<Event>  eventsPartecipated;
-    //= 
-    //new ArrayList<Event>();
+    @OneToMany(mappedBy="user")
+    private List<EventUser>  eventsPartecipated;
+   
 
 
 	/**
@@ -100,12 +98,12 @@ public class User {
     }
 
 
-	public List<Event> getEventsPartecipated() {
+	public List<EventUser> getEventsPartecipated() {
 		return eventsPartecipated;
 	}
 
 
-	public void setEventsPartecipated(List<Event> eventsPartecipated) {
+	public void setEventsPartecipated(List<EventUser> eventsPartecipated) {
 		this.eventsPartecipated = eventsPartecipated;
 	}
 

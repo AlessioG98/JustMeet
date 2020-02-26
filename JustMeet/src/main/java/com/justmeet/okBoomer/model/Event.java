@@ -3,12 +3,9 @@
  */
 package com.justmeet.okBoomer.model;
 
-import java.util.ArrayList;
-import java.security.Principal;
 import java.sql.Date;
 import java.util.List;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
@@ -16,10 +13,15 @@ import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
 import javax.persistence.ManyToMany;
+<<<<<<< HEAD
 import javax.persistence.ManyToOne;
 import javax.persistence.MapsId;
+import javax.persistence.OneToMany;
+=======
+>>>>>>> 48f8a6d3e912b411875b4750daf200bcda0cf980
+
+
 import javax.persistence.Table;
 import javax.persistence.Transient;
 
@@ -67,9 +69,8 @@ public class Event {
 	private Status stato;
 
 	
-	@ManyToMany(mappedBy="eventsPartecipated")
-	private List<User> partecipantList;
-	//=new ArrayList<User>();
+	@OneToMany(mappedBy="event")
+	private List<EventUser> eventsPartecipated;
 
 
 
@@ -155,13 +156,13 @@ public class Event {
 
 
 
-    public List<User> getPartecipantList() {
-		return partecipantList;
+    public List<EventUser> getEventsPartecipated() {
+		return eventsPartecipated;
 	}
 
 
-	public void setPartecipantList(List<User> partecipantList) {
-		this.partecipantList = partecipantList;
+	public void setEventsPartecipated(List<EventUser> eventsPartecipated) {
+		this.eventsPartecipated = eventsPartecipated;
 	}
 
 

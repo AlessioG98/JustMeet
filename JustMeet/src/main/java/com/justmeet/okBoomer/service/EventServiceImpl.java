@@ -12,12 +12,9 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestParam;
 
 import com.justmeet.okBoomer.model.Category;
 import com.justmeet.okBoomer.model.Event;
-import com.justmeet.okBoomer.model.User;
 import com.justmeet.okBoomer.repository.EventRepository;
 import com.justmeet.okBoomer.repository.UserRepository;
 
@@ -66,13 +63,6 @@ public class EventServiceImpl implements EventService {
 		return u;
 	}
 
-	/*
-	 * @Override public void updateEvent(long id,String titolo, Category categoria,
-	 * Date dataEvento, String descrizione, String citta, Date scadenzaPagamento,
-	 * float prezzo) { // TODO Auto-generated method stub
-	 * repository.updateEvent(id,titolo, categoria, dataEvento, descrizione, citta,
-	 * scadenzaPagamento, prezzo); }
-	 */
 
 	public void deleteById(long id) {
 		repository.deleteById(id);

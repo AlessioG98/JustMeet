@@ -30,18 +30,6 @@ public interface EventService {
 
 	Optional<Event> showDetails(Long id);
 
-	/*
-	 * void updateEvent(long id,@Param(value = "titolo") String titolo, @Param(value
-	 * = "categoria") Category categoria,
-	 * 
-	 * @Param(value = "dataEvento") Date dataEvento,@Param(value = "descrizione")
-	 * String descrizione,
-	 * 
-	 * @Param(value = "citta")String citta,@Param(value = "scadenzaPagamento")Date
-	 * scadenzaPagamento,
-	 * 
-	 * @Param(value = "prezzo") float prezzo);
-	 */
 	void deleteById(long id);
 
 	Event findById(long id);

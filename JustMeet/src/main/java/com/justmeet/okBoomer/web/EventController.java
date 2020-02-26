@@ -15,7 +15,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.justmeet.okBoomer.model.Category;
 import com.justmeet.okBoomer.model.Event;
-import com.justmeet.okBoomer.model.EventUser;
 import com.justmeet.okBoomer.model.User;
 
 

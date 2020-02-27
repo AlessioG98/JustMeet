@@ -475,7 +475,7 @@ header.masthead .intro-text .intro-heading {
 
 @media ( min-width :768px) {
 	header.masthead .intro-text {
-		padding: 10%;
+		padding: 20%;
 	}
 	header.masthead .intro-text .intro-lead-in {
 		font-size: 40px;

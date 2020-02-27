@@ -372,18 +372,19 @@ header.masthead {
 	color: #fff;
 	background-image: url(../img/header-bg.jpg);
 	background-repeat: no-repeat;
-	background-attachment: scroll;
-	background-position: center center;
+	background-attachment: fixed;
+	background-position: center;
 	background-size: cover;
 }
 
 .form-group {
 	margin-bottom: 1rem;
-	margin-top: -10rem;
+	margin-top: -0rem;
 }
 
 .form-group2 {
 	margin-bottom: 1rem;
+	margin-top: -rem;
 	max-width: fit-content;
 }
 
@@ -446,7 +447,8 @@ header.masthead {
 
 header.masthead .intro-text {
 	padding-top: 100px;
-	padding-bottom: 100px max-width:fit-content;
+	padding-bottom: 100px;
+	
 }
 
 header.masthead .intro-text .intro-lead-in {
@@ -472,8 +474,7 @@ header.masthead .intro-text .intro-heading {
 
 @media ( min-width :768px) {
 	header.masthead .intro-text {
-		padding-top: 300px;
-		padding-bottom: 200px
+		padding: 10%;
 	}
 	header.masthead .intro-text .intro-lead-in {
 		font-size: 40px;

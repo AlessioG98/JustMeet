@@ -42,7 +42,7 @@
 						<spring:bind path="descrizione">
 							<div class="form-group2 ${status.error ? 'has-error' : ''}">
 								<form:input type="text" path="citta" class="form-control"
-									placeholder="Cittï¿½" autofocus="true"></form:input>
+									placeholder="Città" autofocus="true"></form:input>
 							</div>
 						</spring:bind>
 						<form:label path="categoria">Categoria</form:label>

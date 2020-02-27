@@ -15,7 +15,7 @@
 
 </head>
 
-<body id="page-top">
+<body>
 
 	
 	<%@include file="assets/header.html"%>

@@ -9,7 +9,7 @@
 <head>
 <title>JUST MEET</title>
 </head>
-<body id="page-top">
+<body>
 
 	<%@include file="assets/header.html"%>
 	<!-- Header -->
@@ -36,11 +36,11 @@
 									placeholder="Descrizione" autofocus="true"></form:input>
 							</div>
 						</spring:bind>
-						<form:label path="descrizione">Città</form:label>
+						<form:label path="descrizione">Cittï¿½</form:label>
 						<spring:bind path="descrizione">
 							<div class="form-group2 ${status.error ? 'has-error' : ''}">
 								<form:input type="text" path="citta" class="form-control"
-									placeholder="Città" autofocus="true"></form:input>
+									placeholder="Cittï¿½" autofocus="true"></form:input>
 							</div>
 						</spring:bind>
 						<form:label path="categoria">Categoria</form:label>
@@ -97,5 +97,6 @@
 			</div>
 		</div>
 	</header>
+	<%@include file="assets/footer.html"%>
 </body>
 </html>

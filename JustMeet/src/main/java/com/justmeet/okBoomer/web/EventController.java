@@ -8,6 +8,7 @@ import org.springframework.data.repository.query.Param;
 import org.springframework.lang.Nullable;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -25,16 +26,17 @@ import com.justmeet.okBoomer.repository.UserRepository;
 import com.justmeet.okBoomer.service.EventService;
 import com.justmeet.okBoomer.service.EventUserService;
 import com.justmeet.okBoomer.service.UserService;
+import com.justmeet.okBoomer.validator.EventValidator;
 
 @Controller
 public class EventController {
 	@Autowired
 	private EventService eventService;
-
 	@Autowired
 	UserService userService;
-	@Autowired
-	EventUserService eUService;
+	@Autowired 
+	EventValidator eventValidator;
+	
 
 	@GetMapping(value = "/newEvent")
 	public String createEvent(Model model) {
@@ -43,11 +45,16 @@ public class EventController {
 	}
 
 	@PostMapping("/newEvent")
-	public String createEvent(@ModelAttribute("eventForm") Event eventForm, Model model, Principal principal) {
+	public String createEvent(@ModelAttribute("eventForm") Event eventForm, Model model,
+			Principal principal, BindingResult bindingResult) {
+		eventValidator.validate(eventForm, bindingResult);
+		
+		if (bindingResult.hasErrors()) {
+			return "newEvent";
+        }
 		User u = userService.findByUsername(principal.getName());
 		eventForm.setOwner(u.getUsername());
-		System.out.println(eventForm.getId());
-		eventForm.setId(eventForm.getId());
+		eventForm.setId(eventForm.getId()); //?
 		eventService.save(eventForm);
 		return "index";
 	}
@@ -76,13 +83,10 @@ public class EventController {
 
 	@GetMapping("/myEvents")
 	public String findMyEvents(Principal user, Model model) {
-
 		model.addAttribute("mySearchResult",eventService.findByUserUsername(user));
 		return ("myEvents");
 
 	}
-
-
 
 	@GetMapping("/modifyEvents")
 	public String modifyEvent(Model model, @RequestParam long id) {

@@ -17,12 +17,12 @@
       <link href="${contextPath}/resources/css/common.css" rel="stylesheet">
 </head>
 <body>
-	<c:if test="${modifyEvent.size()==0}">
+	<c:if test="${ePartecipated.size()==0}">
 	<h4 >Nessun Evento</h4>
 	</c:if>
     <div class="form-group">
-        <form:form method="GET" modelAttribute="modifyEvent" class="form-signin">
-        <c:forEach var="event" items="${modifyEvent}">
+        <form:form method="GET" modelAttribute="ePartecipated" class="form-signin">
+        <c:forEach var="event" items="${ePartecipated}">
     <h2 class="form-signin">Eventi Partecipati: </h2>
  	<div class="card">
  	<div class="card-body">
@@ -30,7 +30,7 @@
 		<p class="card-text">${event.categoria}</p>
 		<p class="card-text">${event.dataEvento}</p>
 		<p class="card-text">${event.id}</p>
-   		<a href="modifyEvents" class="btn btn-lg btn-primary btn-block">Modifica Evento</a>              
+   		<a href="removeRequest?id=${event.id}" class="btn btn-lg btn-primary btn-block">Annulla Partecipazione</a>              
    		
        		
       

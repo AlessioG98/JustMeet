@@ -4,11 +4,14 @@
 package com.justmeet.okBoomer.web;
 
 import java.security.Principal;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.justmeet.okBoomer.model.Event;
@@ -17,6 +20,7 @@ import com.justmeet.okBoomer.model.User;
 import com.justmeet.okBoomer.service.EventService;
 import com.justmeet.okBoomer.service.EventUserService;
 import com.justmeet.okBoomer.service.UserService;
+import com.justmeet.okBoomer.validator.EventUserValidator;
 
 /**
  * @author Tommaso Cippitelli
@@ -30,16 +34,23 @@ public class EventUserController {
 	private EventService eventService;
 	@Autowired
 	UserService userService;
-	
+	@Autowired
+	EventUserValidator validator;
 	
 	@GetMapping("/addRequest")
-	public String addRequest(@RequestParam long id, Model model, Principal user) {
+	public String addRequest(@RequestParam long id,Model model,@ModelAttribute EventUser eu, Principal user,BindingResult result) {
+		if (result.hasErrors()) {
+			return "eventDetail";
+        }
 		Event evento = eventService.findById(id);
 		User u = userService.findByUsername(user.getName());
-		EventUser e= new EventUser();
-		e.setEvent(evento);
-		e.setUser(u);
-		eUService.save(e);
+		eu= new EventUser();
+		eu.setEvent(evento);
+		eu.setUser(u);
+		model.addAttribute(eu);
+		validator.validate(eu, result);
+		
+		eUService.save(eu);
 		return "addRequest";
 
 	}
@@ -47,8 +58,24 @@ public class EventUserController {
 	@GetMapping("/eventsPartecipated")
 	public String eventsPartecipated(Model model, Principal user) {
 		User u= userService.findByUsername(user.getName());
-		model.addAttribute("modifyEvent", eUService.eventsPartecipated(u));
-		System.out.println(eUService.eventsPartecipated(u));
+		model.addAttribute("ePartecipated", eUService.eventsPartecipated(u));
 		return "eventsPartecipated";
 	}
+	
+	
+	@GetMapping("/removeRequest")
+	public String removeRequest(@RequestParam long id,Principal user) {
+		User u= userService.findByUsername(user.getName());
+		Event ev=eventService.findById(id);
+		List<EventUser> e =eUService.findByUser(u);
+		for(EventUser i: e) {
+			if(i.getEvent().equals(ev) && i.getUser().equals(u)) {
+				eUService.delete(i);
+			}
+		}
+		
+		return "redirect:/eventsPartecipated";
+		
+	}
+	
 }

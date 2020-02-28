@@ -7,9 +7,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<meta charset="utf-8">
+
 <title>JUST MEET</title>
 </head>
-<body id="page-top">
+<body>
 
 	<%@include file="assets/header.html"%>
 	<!-- Header -->
@@ -97,5 +99,6 @@
 			</div>
 		</div>
 	</header>
+	<%@include file="assets/footer.html"%>
 </body>
 </html>

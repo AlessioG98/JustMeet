@@ -7,6 +7,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<meta charset="utf-8">
+
 <title>JUST MEET</title>
 </head>
 <body id="page-top">

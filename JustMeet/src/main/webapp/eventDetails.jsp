@@ -24,6 +24,7 @@
 						<p class="card-text">Categoria: ${eventDetail.categoria}</p>
 					</div>
 					<p class="card-text">Data Evento: ${eventDetail.dataEvento}</p>
+					<p class="card-text">Numero Partecipanti: ${countPartecipated}</p>
 					<p class="card-text">${eventDetail.id}</p>
 					<a href="addRequest?id=${eventDetail.id}"
 						class="btn btn-lg btn-primary btn-block">Invia richiesta di

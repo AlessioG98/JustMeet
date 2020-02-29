@@ -13,10 +13,13 @@ import com.justmeet.okBoomer.model.User;
 
 public interface EventUserRepository extends JpaRepository<EventUser, Long> {
 
-		@Query(value="select e from EventUser u,Event e where u.user=:id and e.id=u.event")
-		  List<Event> eventsPartecipated(User id);
+	@Query(value="select e from EventUser u,Event e where u.user=:id and e.id=u.event")
+	  List<Event> eventsPartecipated(User id);
 
 	  List<EventUser> findByUser(User u);
+	  
+	  long countByEvent(Event event);
+	  
 
 	
 }

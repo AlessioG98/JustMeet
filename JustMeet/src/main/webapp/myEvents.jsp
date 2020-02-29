@@ -34,11 +34,13 @@
         <c:forEach var="event" items="${mySearchResult}">
  	<div class="card">
  	<div class="card-body">
-		<h4 class="card-title"> ${event.titolo}</h4>
+		<h4 class="card-title" > ${event.titolo}</h4>
 		<p class="card-text">${event.categoria}</p>
 		<p class="card-text">${event.dataEvento}</p>
 		<p class="card-text">${event.id}</p>
    		<a href="modifyEvents?id=${event.id}" class="btn btn-lg btn-primary btn-block">Modifica Evento</a>              
+   		<a href="deleteEvents?id=${event.id}" class="btn btn-lg btn-primary btn-block">Elimina Evento</a>              
+   		<a href="eventDetails?id=${event.id}" class="btn btn-lg btn-primary btn-block">Dettagli Evento</a>              
    		
        		
       

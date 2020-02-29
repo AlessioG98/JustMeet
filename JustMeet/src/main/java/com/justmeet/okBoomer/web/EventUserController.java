@@ -49,7 +49,7 @@ public class EventUserController {
 		eu.setUser(u);
 		model.addAttribute(eu);
 		validator.validate(eu, result);
-		
+
 		eUService.save(eu);
 		return "addRequest";
 

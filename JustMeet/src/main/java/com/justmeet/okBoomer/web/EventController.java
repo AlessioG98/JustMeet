@@ -34,6 +34,8 @@ public class EventController {
 	private EventService eventService;
 	@Autowired
 	UserService userService;
+	@Autowired
+	EventUserService eUService;
 	@Autowired 
 	EventValidator eventValidator;
 	
@@ -76,7 +78,10 @@ public class EventController {
 
 	@GetMapping(value = "/eventDetails")
 	public String showDetailsEvent(@RequestParam long id, Model model) {
+		Event e= eventService.findById(id);
 		model.addAttribute("eventDetail", eventService.showDetails(id).get());
+		model.addAttribute("countPartecipated", eUService.countByEvent(e));
+		System.out.println(eUService.countByEvent(e));
 		return ("eventDetails");
 	}
 

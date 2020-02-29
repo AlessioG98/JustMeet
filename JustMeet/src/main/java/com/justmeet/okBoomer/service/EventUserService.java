@@ -25,5 +25,7 @@ public interface EventUserService {
 
 	void delete(EventUser id);
 	
+	long countByEvent(Event event);
+	
 
 }

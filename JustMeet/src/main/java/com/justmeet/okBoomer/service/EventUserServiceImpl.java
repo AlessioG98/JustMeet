@@ -51,6 +51,14 @@ public class EventUserServiceImpl implements EventUserService {
 	public void delete(EventUser id) {
 		// TODO Auto-generated method stub
 		repo.delete(id);
+		
+	}
+
+
+	@Override
+	public long countByEvent(Event event) {
+		// TODO Auto-generated method stub
+		return repo.countByEvent(event);
 	}
 
 

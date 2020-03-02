@@ -93,7 +93,21 @@
 									style="visibility: hidden;">Cauzione</form:label>
 						<spring:bind path="cauzione">
 							<div class="form-group2 ${status.error ? 'has-error' : ''}">
-								<form:input type="text" path="cauzione" class="form-control" id="cauzione"
+								<form:radiobutton id="trueC" name="gender" value="true"
+								path="cauzione" class="form-control"
+								placeholder="scadenzaPagamento" autofocus="true"
+								style="visibility: hidden;" onchange="radio(this.value)"/>  
+								<form:radiobutton id="falseC" name="gender" value="false"
+								path="cauzione" class="form-control"
+								placeholder="scadenzaPagamento" autofocus="true"
+								style="visibility: hidden;" onchange="radio(this.value)"/>
+							</div>
+						</spring:bind>
+						<form:label path="qtaCauzione" id="lblQtaCauzione"
+									style="visibility: hidden;">Quantità cauzione</form:label>
+						<spring:bind path="qtaCauzione">
+							<div class="form-group2 ${status.error ? 'has-error' : ''}">
+								<form:input type="number" step="0.01" min="0" value="0" path="qtaCauzione" class="form-control" id="qtaCauzione"
 									placeholder="scadenzaPagamento" autofocus="true"
 									style="visibility: hidden;"></form:input>
 							</div>
@@ -132,12 +146,25 @@
 			document.getElementById("lblScadenzaPagamento").style.visibility = "visible";
 			document.getElementById("scadenzaPagamento").style.visibility = "visible";
 			document.getElementById("lblCauzione").style.visibility = "visible";
-			document.getElementById("cauzione").style.visibility = "visible";
+			document.getElementById("trueC").style.visibility = "visible";
+			document.getElementById("falseC").style.visibility = "visible";
 		}else{
 			document.getElementById("lblScadenzaPagamento").style.visibility = "hidden";
 			document.getElementById("scadenzaPagamento").style.visibility = "hidden";
 			document.getElementById("lblCauzione").style.visibility = "hidden";
-			document.getElementById("cauzione").style.visibility = "hidden";
+			document.getElementById("trueC").style.visibility = "visible";
+			document.getElementById("falseC").style.visibility = "visible";
+		}
+		document.getElementById("qtaCauzione").setAttribute("max",price);
+	}
+
+	function radio(radio) {
+		if(radio){
+			document.getElementById("lblQtaCauzione").style.visibility = "visible";
+			document.getElementById("qtaCauzione").style.visibility = "visible";
+		}else{
+			document.getElementById("lblQtaCauzione").style.visibility = "hidden";
+			document.getElementById("qtaCauzione").style.visibility = "hidden";
 		}
 	}
 </script>

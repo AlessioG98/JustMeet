@@ -5,7 +5,7 @@
 
 
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
 <meta charset="utf-8">
 
@@ -38,11 +38,11 @@
 									placeholder="Descrizione" autofocus="true"></form:input>
 							</div>
 						</spring:bind>
-						<form:label path="descrizione">Citt�</form:label>
+						<form:label path="descrizione">Città</form:label>
 						<spring:bind path="descrizione">
 							<div class="form-group2 ${status.error ? 'has-error' : ''}">
 								<form:input type="text" path="citta" class="form-control"
-									placeholder="Citt�" autofocus="true"></form:input>
+									placeholder="Città" autofocus="true"></form:input>
 							</div>
 						</spring:bind>
 						<form:label path="categoria">Categoria</form:label>

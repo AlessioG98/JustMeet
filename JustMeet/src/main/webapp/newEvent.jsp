@@ -38,11 +38,11 @@
 									placeholder="Descrizione" autofocus="true"></form:input>
 							</div>
 						</spring:bind>
-						<form:label path="descrizione">Città</form:label>
+						<form:label path="descrizione">Cittï¿½</form:label>
 						<spring:bind path="descrizione">
 							<div class="form-group2 ${status.error ? 'has-error' : ''}">
 								<form:input type="text" path="citta" class="form-control"
-									placeholder="Città" autofocus="true"></form:input>
+									placeholder="Cittï¿½" autofocus="true"></form:input>
 							</div>
 						</spring:bind>
 						<form:label path="categoria">Categoria</form:label>
@@ -67,30 +67,35 @@
 						<form:label path="dataEvento">Data Evento</form:label>
 						<spring:bind path="dataEvento">
 							<div class="form-group2 ${status.error ? 'has-error' : ''}">
-								<form:input type="date" path="dataEvento" class="form-control"
-									placeholder="DataEvento" autofocus="true"></form:input>
+								<form:input type="date" path="dataEvento" class="form-control" id="dataEvento"
+									placeholder="DataEvento" autofocus="true"
+									min ="" onchange="date(this.value)"></form:input>
 							</div>
 						</spring:bind>
 						<form:label path="prezzo">Prezzo</form:label>
 						<spring:bind path="prezzo">
 							<div class="form-group2 ${status.error ? 'has-error' : ''}">
-								<form:input type="float" path="prezzo" class="form-control"
-									placeholder="Prezzo" autofocus="true"></form:input>
+								<form:input type="number" step="0.01" min="0" value="0" path="prezzo" class="form-control" id="prezzo"
+									placeholder="Prezzo" autofocus="true" onchange="price(this.value)"></form:input>
 							</div>
 						</spring:bind>
-						<form:label path="scadenzaPagamento">Data Scadenza Pagamento</form:label>
+						<form:label path="scadenzaPagamento" id="lblScadenzaPagamento"
+									style="visibility: hidden;">Data Scadenza Pagamento</form:label>
 						<spring:bind path="scadenzaPagamento">
 							<div class="form-group2 ${status.error ? 'has-error' : ''}">
-								<form:input type="date" path="scadenzaPagamento"
+								<form:input type="date" path="scadenzaPagamento" id="scadenzaPagamento"
 									class="form-control" placeholder="scadenzaPagamento"
-									autofocus="true"></form:input>
+									min ="" max ="" autofocus="true"
+									style="visibility: hidden;"></form:input>
 							</div>
 						</spring:bind>
-						<form:label path="cauzione">Cauzione</form:label>
+						<form:label path="cauzione" id="lblCauzione"
+									style="visibility: hidden;">Cauzione</form:label>
 						<spring:bind path="cauzione">
 							<div class="form-group2 ${status.error ? 'has-error' : ''}">
-								<form:input type="text" path="cauzione" class="form-control"
-									placeholder="scadenzaPagamento" autofocus="true"></form:input>
+								<form:input type="text" path="cauzione" class="form-control" id="cauzione"
+									placeholder="scadenzaPagamento" autofocus="true"
+									style="visibility: hidden;"></form:input>
 							</div>
 						</spring:bind>
 						<button class="btn btn-lg btn-primary btn-block" type="submit">Invia</button>
@@ -101,4 +106,39 @@
 	</header>
 	<%@include file="assets/footer.html"%>
 </body>
+<script type="text/javascript">
+	var today = new Date();
+	var dd = today.getDate();
+	var mm = today.getMonth()+1; //January is 0!
+	var yyyy = today.getFullYear();
+	if(dd<10){
+		dd='0'+dd;
+	} 
+	if(mm<10){
+		mm='0'+mm;
+	}
+	var today = yyyy+'-'+mm+'-'+dd;
+	document.getElementById("dataEvento").setAttribute("min", today);
+	document.getElementById("dataEvento").setAttribute("value", today);
+	document.getElementById("scadenzaPagamento").setAttribute("min", today);
+	document.getElementById("scadenzaPagamento").setAttribute("value", today);
+	
+	function date(date){
+		document.getElementById("scadenzaPagamento").setAttribute("max",date);
+	}
+
+	function price(price){
+		if(price > 0){
+			document.getElementById("lblScadenzaPagamento").style.visibility = "visible";
+			document.getElementById("scadenzaPagamento").style.visibility = "visible";
+			document.getElementById("lblCauzione").style.visibility = "visible";
+			document.getElementById("cauzione").style.visibility = "visible";
+		}else{
+			document.getElementById("lblScadenzaPagamento").style.visibility = "hidden";
+			document.getElementById("scadenzaPagamento").style.visibility = "hidden";
+			document.getElementById("lblCauzione").style.visibility = "hidden";
+			document.getElementById("cauzione").style.visibility = "hidden";
+		}
+	}
+</script>
 </html>

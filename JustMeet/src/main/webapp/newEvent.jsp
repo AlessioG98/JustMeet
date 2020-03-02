@@ -93,23 +93,36 @@
 						<form:label path="cauzione" id="lblCauzione"
 									style="visibility: hidden;">Cauzione</form:label>
 						<spring:bind path="cauzione">
-							<div class="form-group2 ${status.error ? 'has-error' : ''}">
-								<form:radiobutton id="trueC" name="gender" value="true"
-								path="cauzione" class="form-control"
-								placeholder="scadenzaPagamento" autofocus="true"
-								style="visibility: hidden;" onchange="radio(this.value)"/>  
-								<form:radiobutton id="falseC" name="gender" value="false"
-								path="cauzione" class="form-control"
-								placeholder="scadenzaPagamento" autofocus="true"
-								style="visibility: hidden;" onchange="radio(this.value)"/>
+							<div class="form-group2 ${status.error ? 'has-error' : ''} container" id="radioCauzione" style="visibility: hidden;">
+								<div class="row">
+									<div class="col">
+										Si
+									</div>
+									<div class="col">
+										<form:radiobutton name="cauzioneRadio" value="true"
+										path="cauzione" class="form-control"
+										style="width: fit-content;" onchange="radio(this.value)"/>
+									</div>
+									<div class="col">
+									  
+									</div>
+									<div class="col">
+										No
+									</div>
+									<div class="col">
+										<form:radiobutton name="cauzioneRadio" value="false"
+										path="cauzione" class="form-control"
+										style="width: fit-content;" onchange="radio(this.value)"/>
+									</div>
+								</div>
 							</div>
 						</spring:bind>
 						<form:label path="qtaCauzione" id="lblQtaCauzione"
 									style="visibility: hidden;">Quantità cauzione</form:label>
 						<spring:bind path="qtaCauzione">
 							<div class="form-group2 ${status.error ? 'has-error' : ''}">
-								<form:input type="number" step="0.01" min="0" value="0" path="qtaCauzione" class="form-control" id="qtaCauzione"
-									placeholder="scadenzaPagamento" autofocus="true"
+								<form:input type="number" step="0.01" min="0" value="0" path="qtaCauzione" class="form-control"
+									id="qtaCauzione" placeholder="scadenzaPagamento" autofocus="true"
 									style="visibility: hidden;"></form:input>
 							</div>
 						</spring:bind>
@@ -147,20 +160,18 @@
 			document.getElementById("lblScadenzaPagamento").style.visibility = "visible";
 			document.getElementById("scadenzaPagamento").style.visibility = "visible";
 			document.getElementById("lblCauzione").style.visibility = "visible";
-			document.getElementById("trueC").style.visibility = "visible";
-			document.getElementById("falseC").style.visibility = "visible";
+			document.getElementById("radioCauzione").style.visibility = "visible";
 		}else{
 			document.getElementById("lblScadenzaPagamento").style.visibility = "hidden";
 			document.getElementById("scadenzaPagamento").style.visibility = "hidden";
 			document.getElementById("lblCauzione").style.visibility = "hidden";
-			document.getElementById("trueC").style.visibility = "visible";
-			document.getElementById("falseC").style.visibility = "visible";
+			document.getElementById("radioCauzione").style.visibility = "hidden";
 		}
 		document.getElementById("qtaCauzione").setAttribute("max",price);
 	}
 
 	function radio(radio) {
-		if(radio){
+		if(radio.localeCompare("true") == 0){
 			document.getElementById("lblQtaCauzione").style.visibility = "visible";
 			document.getElementById("qtaCauzione").style.visibility = "visible";
 		}else{

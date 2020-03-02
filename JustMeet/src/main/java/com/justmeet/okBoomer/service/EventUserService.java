@@ -3,6 +3,7 @@
  */
 package com.justmeet.okBoomer.service;
 
+import java.security.Principal;
 import java.sql.Date;
 import java.util.List;
 
@@ -23,7 +24,7 @@ public interface EventUserService {
 	
 	List<EventUser> findByUser(User u);
 
-	void delete(EventUser id);
+	void delete(long id,Principal user);
 	
 	long countByEvent(Event event);
 	

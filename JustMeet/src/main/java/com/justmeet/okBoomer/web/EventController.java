@@ -108,7 +108,8 @@ public class EventController {
 	}
 
 	@GetMapping("/deleteEvents")
-	public String deleteEvents(Model model, @RequestParam long id) {
+	public String deleteEvents(Model model, @RequestParam long id,Principal user) {
+		eUService.delete(id, user);
 		eventService.deleteById(id);
 		return "redirect:/modifySummary.jsp";
 	}

@@ -66,14 +66,7 @@ public class EventUserController {
 	
 	@GetMapping("/removeRequest")
 	public String removeRequest(@RequestParam long id,Principal user) {
-		User u= userService.findByUsername(user.getName());
-		Event ev=eventService.findById(id);
-		List<EventUser> e =eUService.findByUser(u);
-		for(EventUser i: e) {
-			if(i.getEvent().equals(ev) && i.getUser().equals(u)) {
-				eUService.delete(i);
-			}
-		}
+		eUService.delete(id, user);
 		
 		return "redirect:/eventsPartecipated";
 		

@@ -3,6 +3,7 @@
  */
 package com.justmeet.okBoomer.service;
 
+import java.security.Principal;
 import java.sql.Date;
 import java.util.List;
 
@@ -24,6 +25,10 @@ public class EventUserServiceImpl implements EventUserService {
 
 	@Autowired
 	EventUserRepository repo;
+	@Autowired
+	UserService uService;
+	@Autowired
+	EventService eService;
 	
 	
 	@Override
@@ -48,9 +53,16 @@ public class EventUserServiceImpl implements EventUserService {
 
 
 	@Override
-	public void delete(EventUser id) {
+	public void delete(long id,Principal user) {
 		// TODO Auto-generated method stub
-		repo.delete(id);
+		User u= uService.findByUsername(user.getName());
+		Event ev=eService.findById(id);
+		List<EventUser> e =repo.findByUser(u);
+		for(EventUser i: e) {
+			if(i.getEvent().equals(ev) && i.getUser().equals(u)) {
+				repo.delete(i);
+			}
+		}
 		
 	}
 

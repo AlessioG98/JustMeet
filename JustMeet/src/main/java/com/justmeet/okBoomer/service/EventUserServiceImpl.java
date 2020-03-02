@@ -62,5 +62,12 @@ public class EventUserServiceImpl implements EventUserService {
 	}
 
 
+	@Override
+	public List<EventUser> notDuplicate(Event event, User user) {
+		// TODO Auto-generated method stub
+		return repo.notDuplicate(event, user);
+	}
+
+
 
 }

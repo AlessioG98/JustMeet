@@ -27,5 +27,8 @@ public interface EventUserService {
 	
 	long countByEvent(Event event);
 	
+	List<EventUser> notDuplicate(Event event,User user);
+
+	
 
 }

@@ -20,6 +20,7 @@ import com.justmeet.okBoomer.model.User;
 import com.justmeet.okBoomer.service.EventService;
 import com.justmeet.okBoomer.service.EventUserService;
 import com.justmeet.okBoomer.service.UserService;
+import com.justmeet.okBoomer.validator.EventUserValidator;
 
 /**
  * @author Tommaso Cippitelli
@@ -33,18 +34,23 @@ public class EventUserController {
 	private EventService eventService;
 	@Autowired
 	UserService userService;
+	@Autowired
+	EventUserValidator validator;
 
 	
 	@GetMapping("/addRequest")
-	public String addRequest(@RequestParam long id,Model model,@ModelAttribute EventUser eu, Principal user,BindingResult result) {
-
+	public String addRequest(@RequestParam long id,Model model,@ModelAttribute EventUser eu,
+			Principal user,BindingResult result) {
 		Event evento = eventService.findById(id);
 		User u = userService.findByUsername(user.getName());
 		eu= new EventUser();
 		eu.setEvent(evento);
 		eu.setUser(u);
 		model.addAttribute(eu);
-
+		validator.validate(eu, result);
+		if (result.hasErrors()) {
+			return "eventDetails?id";
+        }
 		eUService.save(eu);
 		return "addRequest";
 

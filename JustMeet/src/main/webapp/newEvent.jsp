@@ -38,6 +38,7 @@
 									placeholder="Descrizione" autofocus="true"></form:input>
 							</div>
 						</spring:bind>
+
 						<form:label path="descrizione">Città</form:label>
 						<spring:bind path="descrizione">
 							<div class="form-group2 ${status.error ? 'has-error' : ''}">

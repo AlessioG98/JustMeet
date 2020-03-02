@@ -20,6 +20,9 @@ public interface EventUserRepository extends JpaRepository<EventUser, Long> {
 	  
 	  long countByEvent(Event event);
 	  
+	  @Query("select eu from EventUser eu where eu.event=:event and eu.user=:user")
+	  List<EventUser> notDuplicate(Event event,User user);
+	  
 
 	
 }

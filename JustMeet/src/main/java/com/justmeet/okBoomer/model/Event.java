@@ -59,6 +59,8 @@ public class Event {
 	private float prezzo;
     @Column(name="cauzione") 
 	private boolean cauzione;
+    
+    //@Column
 	//private float pcauzione=0;
     @Column(name="scadenzaPagamento") 
 	private Date scadenzaPagamento;

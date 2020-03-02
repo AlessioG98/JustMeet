@@ -9,10 +9,8 @@ import org.springframework.validation.Errors;
 import org.springframework.validation.Validator;
 
 import com.justmeet.okBoomer.model.EventUser;
-import com.justmeet.okBoomer.model.User;
 import com.justmeet.okBoomer.repository.EventUserRepository;
 import com.justmeet.okBoomer.service.EventUserService;
-
 /**
  * @author Tommaso Cippitelli
  *
@@ -21,7 +19,7 @@ import com.justmeet.okBoomer.service.EventUserService;
 public class EventUserValidator implements Validator{
 	
 	@Autowired
-	EventUserRepository eUService;
+	EventUserService eUService;
 	
 	
 	@Override
@@ -34,7 +32,6 @@ public class EventUserValidator implements Validator{
 	public void validate(Object target, Errors errors) {
 		// TODO Auto-generated method stub
 		EventUser  eUser = (EventUser) target;
-
 		
 		   if (eUService.notDuplicate(eUser.getEvent(), eUser.getUser()) != null) {
 	            errors.reject("You are already participating in this event.");

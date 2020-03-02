@@ -19,12 +19,12 @@
 		<div class="container">
 			<div class="intro-text" align="center" >
 				<div class="form-group" align="center">
+					<h2 class="form-signin">Risultati della ricerca:</h2>
 	<c:if test="${searchResults.size()==0}">
 			<h4>Nessun evento trovato, riprova</h4>
 		</c:if>
 		<div class="form-group">
 			<p></p>
-			<h2 class="form-signin">Risultati della ricerca:</h2>
 			<form:form method="POST" modelAttribute="searchResults"
 				class="form-signin">
 				<c:forEach var="event" items="${searchResults}">

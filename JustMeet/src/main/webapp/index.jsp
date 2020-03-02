@@ -8,7 +8,7 @@
 <head>
 <meta charset="utf-8">
 
-<title>Just Meet</title>
+<title>Home</title>
 </head>
 <body>
 <%@include file="assets/header.html"%>
@@ -20,7 +20,7 @@
 				<div class="intro-heading text-uppercase">It's Nice To See You
 					Again!</div>
 				<a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger"
-					href="#services">Inizia</a>
+					href="#services">Vai</a>
 			</div>
 		</div>
 	</header>
@@ -29,7 +29,7 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-12 text-center">
-					<h2 class="section-heading text-uppercase">Dimmi di pi�</h2>
+					<h2 class="section-heading text-uppercase">Dimmi di pi&ugrave;</h2>
 					<h3 class="section-subheading text-muted">potrebbe piacermi ;)</h3>
 				</div>
 			</div>
@@ -41,9 +41,8 @@
 
 					</span>
 					<h4 class="service-heading">INVENTA</h4>
-					<p class="text-muted">Lorem ipsum dolor sit amet, consectetur
-						adipisicing elit. Minima maxime quam architecto quo inventore
-						harum ex magni, dicta impedit.</p>
+					<p class="text-muted">Dai spazio alla tua creativit&agrave; e crea un evento con la tua idea
+					</p>
 				</div>
 				<div class="col-md-4">
 					<span class="fa-stack fa-4x"> <i
@@ -51,9 +50,8 @@
 						class="fas fa-laptop fa-stack-1x fa-inverse"></i>
 					</span>
 					<h4 class="service-heading">ORGANIZZA</h4>
-					<p class="text-muted">Lorem ipsum dolor sit amet, consectetur
-						adipisicing elit. Minima maxime quam architecto quo inventore
-						harum ex magni, dicta impedit.</p>
+					<p class="text-muted">Preparati a
+						conoscere un numero illimitato di persone</p>
 				</div>
 				<div class="col-md-4">
 					<span class="fa-stack fa-4x"> <i
@@ -61,9 +59,7 @@
 						class="fas fa-lock fa-stack-1x fa-inverse"></i>
 					</span>
 					<h4 class="service-heading">CONTROLLA</h4>
-					<p class="text-muted">Lorem ipsum dolor sit amet, consectetur
-						adipisicing elit. Minima maxime quam architecto quo inventore
-						harum ex magni, dicta impedit.</p>
+					<p class="text-muted">Non farti sfuggire nulla.</p>
 				</div>
 			</div>
 		</div>

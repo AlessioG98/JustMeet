@@ -9,7 +9,7 @@
 <head>
 <meta charset="utf-8">
 
-<title>JUST MEET</title>
+<title>Nuovo Evento</title>
 </head>
 <body>
 

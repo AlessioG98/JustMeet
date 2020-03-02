@@ -296,6 +296,22 @@ img::-moz-selection {
 	box-shadow: 0 0 0 .2rem rgba(254, 209, 55, .5) !important
 }
 
+.btn-primary2 {
+	background-color: #fed136;
+	border-color: #fed136;
+	    margin-top: -100px;
+}
+
+.btn-primary2:active, .btn-primary2:focus, .btn-primary2:hover {
+	background-color: #fec810 !important;
+	border-color: #fec810 !important;
+	color: #fff
+}
+
+.btn-primary2:active, .btn-primary2:focus {
+	box-shadow: 0 0 0 .2rem rgba(254, 209, 55, .5) !important
+}
+
 #mainNav {
 	background-color: #212529
 }
@@ -371,7 +387,7 @@ img::-moz-selection {
 header.masthead {
 	text-align: center;
 	color: #fff;
-	background-image: url(../img/header-bg.jpg);
+	background-image: url(../img/header.jpg);
 	background-repeat: no-repeat;
 	background-attachment: fixed;
 	background-position: center;
@@ -380,7 +396,7 @@ header.masthead {
 
 .form-group {
 	margin-bottom: 1rem;
-	margin-top: -0rem;
+	margin-top: -rem;
 }
 
 .form-group2 {
@@ -954,7 +970,8 @@ section#contact :-ms-input-placeholder {
 }
 
 ul.social-buttons {
-	margin-bottom: 0
+	margin-bottom: 0;
+
 }
 
 ul.social-buttons li a {
@@ -967,7 +984,8 @@ ul.social-buttons li a {
 	color: #fff;
 	border-radius: 100%;
 	outline: 0;
-	background-color: #212529
+	background-color: #212529;
+	padding-top: 13;
 }
 
 ul.social-buttons li a:active, ul.social-buttons li a:focus, ul.social-buttons li a:hover

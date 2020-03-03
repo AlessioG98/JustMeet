@@ -38,7 +38,6 @@
 								class="btn btn-lg btn-primary btn-block">Dettagli</a>
 						</div>
 					</div>
-					<p></p>
 				</c:forEach>
 			</form:form>
   </div>

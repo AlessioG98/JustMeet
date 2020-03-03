@@ -59,6 +59,22 @@
 
 						<button class="btn btn-lg btn-primary btn-block" type="submit">Cerca</button>
 					</form:form>
+						<form:form method="POST" modelAttribute="showAllEvent"
+								class="form-signin">
+									<c:forEach var="event" items="${showAllEvent}">
+					<div class="card">
+						<div class="card-body" align="center">
+							<h4 class="card-title">${event.titolo}</h4>
+							<p class="card-text">${event.descrizione}</p>
+							<p class="card-text">${event.categoria}</p>
+							<p class="card-text">${event.dataEvento}</p>
+							<a href="eventDetails?id=${event.id}"
+								class="btn btn-lg btn-primary btn-block">Dettagli</a>
+						</div>
+					</div>
+				</c:forEach>
+								</form:form>
+				
 				</div>
 
 			</div>

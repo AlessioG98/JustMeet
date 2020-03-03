@@ -64,6 +64,7 @@ public class EventController {
 	@GetMapping("/searchEvent")
 	public String searchEventBy(Model model) {
 		model.addAttribute("searchForm", new Event());
+		model.addAttribute("showAllEvent", eventService.getAllEvent());
 		return "searchEvent";
 	}
 

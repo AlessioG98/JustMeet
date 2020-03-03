@@ -17,20 +17,25 @@
 	<!-- Header -->
 	<header class="masthead">
 		<div class="container">
-			<div class="intro-text" align="center">
-				<div class="form-group2" align="center">
-					<h4 class="card-title">Titolo: ${eventDetail.titolo}</h4>
-					<div>
-						<p class="card-text">Categoria: ${eventDetail.categoria}</p>
+			<div class="intro-text">
+				<div class="form-group2 row" style="justify-content: center;">
+					<div class="col-2"></div>
+					<div class="card col-8">
+						<div class="card-body">
+							<h4 class="card-title">Titolo: ${eventDetail.titolo}</h4>
+							<p class="card-text">Categoria: ${eventDetail.categoria}</p>
+							<p class="card-text">Data Evento: ${eventDetail.dataEvento}</p>
+							<p class="card-text">Numero Partecipanti: ${countPartecipated}</p>
+							<p class="card-text">Prezzo: ${eventDetail.prezzo}</p>
+							<p class="card-text">Cauzione: ${eventDetail.cauzione}</p>
+							<p class="card-text">Quantità cauzione: ${eventDetail.qtaCauzione}</p>
+							<a href="addRequest?id=${eventDetail.id}"
+								class="btn btn-lg btn-primary btn-block">Invia richiesta di
+								partecipazione</a>
+						</div>
 					</div>
-					<p class="card-text">Data Evento: ${eventDetail.dataEvento}</p>
-					<p class="card-text">Numero Partecipanti: ${countPartecipated}</p>
-					<p class="card-text">${eventDetail.id}</p>
-					<a href="addRequest?id=${eventDetail.id}"
-						class="btn btn-lg btn-primary btn-block">Invia richiesta di
-						partecipazione</a>
+					<div class="col-2"></div>
 				</div>
-
 			</div>
 		</div>
 

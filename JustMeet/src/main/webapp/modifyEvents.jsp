@@ -23,7 +23,7 @@
 	<!-- Header -->
 	<header class="masthead">
 		<div class="container">
-			<div class="intro-text" align="center">
+			<div class="intro-text">
 
 				<c:if test="${mySearchResult.size()==0}">
 					<h4>Nessun Evento</h4>

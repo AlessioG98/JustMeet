@@ -26,7 +26,7 @@
 					<form:form method="POST" modelAttribute="searchResults"
 						class="form-signin row" style="place-content: center;">
 						<c:forEach var="event" items="${searchResults}">
-							<div class="card col-5">
+							<div class="card col-11 col-5">
 								<div class="card-body">
 									<h4 class="card-title">${event.titolo}</h4>
 									<p class="card-text">${event.descrizione}</p>

@@ -51,6 +51,11 @@
 							<form method="GET">Cauzione: ${event.cauzione}</form>
 						</div>
 
+						<label>Quantità cauzione</label>
+						<div class="form-group ${status.error ? 'has-error' : ''}">
+							<form method="GET">Quantità cauzione: ${event.qtaCauzione}</form>
+						</div>
+
 						<button onclick="addRequest.jsp">Unisciti</button>
 					</form:form>
 				</div>

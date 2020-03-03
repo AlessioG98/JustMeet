@@ -25,7 +25,7 @@
 				<div class="form-group2">
 					<form:form method="POST" modelAttribute="searchForm"
 						class="form-signin row">
-					<h2 class="form-signin col-12">Cerca evento</h2>
+					<h2 class="form-signin col-12" style="padding:5%;">Cerca evento</h2>
 					<label class="col-2" style="text-align: end; padding-left: 0%;">Categoria</label>
 					<spring:bind path="categoria">
 						<div class="form-group2 ${status.error ? 'has-error' : ''} col-4">
@@ -52,7 +52,7 @@
 								placeholder="DataEvento" autofocus="true"></form:input>
 						</div>
 					</spring:bind>
-					<button class="btn btn-lg btn-primary btn-block col-12" type="submit">Cerca</button>
+					<button class="btn btn-lg btn-primary btn-block col-12" type="submit" style="align:center">Vai</button>
 					</form:form>
 					
 					<form:form method="POST" modelAttribute="showAllEvent"

@@ -23,33 +23,32 @@
 	<!-- Header -->
 	<header class="masthead">
 		<div class="container">
-			<div class="intro-text" align="center">
+			<div class="intro-text row">
 	
-	<c:if test="${mySearchResult.size()==0}">
-	<h4 >Nessun Evento</h4>
-	</c:if>
-    <div class="form-group">
-        <form:form method="GET" modelAttribute="mySearchResult" class="form-signin">
-    <h2 class="form-signin">I miei eventi: </h2>
-        <c:forEach var="event" items="${mySearchResult}">
- 	<div class="card">
- 	<div class="card-body">
-		<h4 class="card-title" > ${event.titolo}</h4>
-		<p class="card-text">${event.categoria}</p>
-		<p class="card-text">${event.dataEvento}</p>
-		<p class="card-text">${event.id}</p>
-   		<a href="modifyEvents?id=${event.id}" class="btn btn-lg btn-primary btn-block">Modifica Evento</a>              
-   		<a href="deleteEvents?id=${event.id}" class="btn btn-lg btn-primary btn-block">Elimina Evento</a>              
-   		<a href="eventDetails?id=${event.id}" class="btn btn-lg btn-primary btn-block">Dettagli Evento</a>              
-   		
-       		
-      
-  </div>
-  </div>
-  </c:forEach>
-  </form:form>
- </div>
-	</div>
+			<c:if test="${mySearchResult.size()==0}">
+				<h4 class="col-12">Nessun Evento</h4>
+			</c:if>
+    		<div class="form-group">
+				<form:form method="GET" modelAttribute="mySearchResult" 
+							class="form-signin row" style="justify-content: center;">
+				<h2 class="form-signin col-12">I miei eventi: </h2>
+				<c:forEach var="event" items="${mySearchResult}">
+					<div class="card col-5">
+						<div class="card-body">
+							<h4 class="card-title" > ${event.titolo}</h4>
+							<p class="card-text">${event.categoria}</p>
+							<p class="card-text">${event.dataEvento}</p>
+							<p class="card-text">${event.id}</p>
+							<a href="modifyEvents?id=${event.id}" class="btn btn-lg btn-primary btn-block">Modifica Evento</a>              
+							<a href="deleteEvents?id=${event.id}" class="btn btn-lg btn-primary btn-block">Elimina Evento</a>              
+							<a href="eventDetails?id=${event.id}" class="btn btn-lg btn-primary btn-block">Dettagli Evento</a>              
+						</div>
+					</div>
+					<div class="col-1"></div>
+  				</c:forEach>
+  				</form:form>
+ 			</div>
+			</div>
 		</div>
 	</header>
 	

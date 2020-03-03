@@ -39,7 +39,7 @@
 							</div>
 						</spring:bind>
 
-						<form:label path="descrizione">Citt√†</form:label>
+						<form:label path="descrizione">Citt‡†</form:label>
 						<spring:bind path="descrizione">
 							<div class="form-group2 ${status.error ? 'has-error' : ''}">
 								<form:input type="text" path="citta" class="form-control"

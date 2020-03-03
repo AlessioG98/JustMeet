@@ -33,7 +33,7 @@ public class EventUserValidator implements Validator{
 		// TODO Auto-generated method stub
 		EventUser  eUser = (EventUser) target;
 		
-		   if (eUService.notDuplicate(eUser.getEvent(), eUser.getUser()) != null) {
+		   if (!(eUService.notDuplicate(eUser.getEvent(), eUser.getUser()).isEmpty())) {
 	            errors.reject("You are already participating in this event.");
 	        }
 		

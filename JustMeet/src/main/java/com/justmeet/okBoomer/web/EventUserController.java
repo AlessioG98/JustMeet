@@ -41,6 +41,7 @@ public class EventUserController {
 	@GetMapping("/addRequest")
 	public String addRequest(@RequestParam long id,Model model,@ModelAttribute EventUser eu,
 			Principal user,BindingResult result) {
+
 		Event evento = eventService.findById(id);
 		User u = userService.findByUsername(user.getName());
 		eu= new EventUser();
@@ -50,10 +51,10 @@ public class EventUserController {
 		validator.validate(eu, result);
 		if (result.hasErrors()) {
 			return "eventDetails?id";
-        }
+		}else {
 		eUService.save(eu);
 		return "addRequest";
-
+		}
 	}
 	
 	@GetMapping("/eventsPartecipated")

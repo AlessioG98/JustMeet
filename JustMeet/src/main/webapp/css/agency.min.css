@@ -35,7 +35,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .page-section {
-	padding: 100px 0
+	padding: 100px 0;
+	height: -webkit-fill-available;
 }
 
 .page-section h2.section-heading {
@@ -283,7 +284,8 @@ img::-moz-selection {
 .btn-primary {
 	background-color: #fed136;
 	border-color: #fed136;
-	    margin-top: 0px;
+		margin-top: 0px;
+		color:black;
 }
 
 .btn-primary:active, .btn-primary:focus, .btn-primary:hover {
@@ -321,7 +323,7 @@ img::-moz-selection {
 	right: 0;
 	padding: 13px;
 	text-transform: uppercase;
-	color: #fff;
+	color: white;
 	border: 0;
 	background-color: #fed136;
 	font-family: Montserrat, -apple-system, BlinkMacSystemFont, 'Segoe UI',
@@ -330,7 +332,7 @@ img::-moz-selection {
 }
 
 #mainNav .navbar-brand {
-	color: #fed136;
+	color: white;
 	font-family: 'Kaushan Script', -apple-system, BlinkMacSystemFont,
 		'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif,
 		'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol',
@@ -347,7 +349,7 @@ img::-moz-selection {
 	font-weight: 400;
 	padding: .75em 0;
 	letter-spacing: 1px;
-	color: #fff;
+	color: white;
 	font-family: Montserrat, -apple-system, BlinkMacSystemFont, 'Segoe UI',
 		Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji',
 		'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'
@@ -355,7 +357,7 @@ img::-moz-selection {
 
 #mainNav .navbar-nav .nav-item .nav-link.active, #mainNav .navbar-nav .nav-item .nav-link:hover
 	{
-	color: #fed136
+	color: #black
 }
 
 @media ( min-width :992px) {
@@ -392,6 +394,8 @@ header.masthead {
 	background-attachment: fixed;
 	background-position: center;
 	background-size: cover;
+	height: -webkit-fill-available;
+
 }
 
 .form-group {
@@ -494,6 +498,7 @@ header.masthead .intro-text .intro-heading {
 		padding: 20%;
 	}
 	header.masthead .intro-text .intro-lead-in {
+		color: black;
 		font-size: 40px;
 		font-style: italic;
 		line-height: 40px;
@@ -504,6 +509,7 @@ header.masthead .intro-text .intro-heading {
 			'Noto Color Emoji'
 	}
 	header.masthead .intro-text .intro-heading {
+		color: black;
 		font-size: 75px;
 		font-weight: 700;
 		line-height: 75px;

@@ -51,7 +51,8 @@ public class EventUserController {
 		validator.validate(eu, result);
 		if (result.hasErrors()) {
 			return "eventDetails?id";
-		}else {
+		}
+		else {
 		eUService.save(eu);
 		return "addRequest";
 		}

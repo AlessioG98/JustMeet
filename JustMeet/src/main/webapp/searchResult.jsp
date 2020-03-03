@@ -21,7 +21,7 @@
 				<div class="form-group row">
 					<h2 class="form-signin col-12">Risultati della ricerca:</h2>
 					<c:if test="${searchResults.size()==0}">
-						<h4>Nessun evento trovato, riprova</h4>
+						<h4 class="col-12">Nessun evento trovato, riprova</h4>
 					</c:if>
 					<form:form method="POST" modelAttribute="searchResults"
 						class="form-signin row" style="place-content: center;">

@@ -355,7 +355,7 @@ img::-moz-selection {
 
 #mainNav .navbar-nav .nav-item .nav-link.active, #mainNav .navbar-nav .nav-item .nav-link:hover
 	{
-	color: black
+	color: white
 }
 
 @media ( min-width :992px) {
@@ -372,13 +372,19 @@ img::-moz-selection {
 	}
 	#mainNav .navbar-nav .nav-item .nav-link {
 		padding: 0.1em 1em !important;
-		color:white;
+		color:black;
 		margin-top:5px;
 	}
 	#mainNav.navbar-shrink {
 		padding-top: 0;
 		background-color: #212529;
+	
 
+	}
+	#mainNav.navbar-shrink .navbar-nav .nav-item .nav-link {
+		padding-top: 0;
+		background-color: #212529;
+		color:white;
 	}
 	#mainNav.navbar-shrink .navbar-brand:hover {
 		

@@ -314,9 +314,7 @@ img::-moz-selection {
 	box-shadow: 0 0 0 .2rem rgba(254, 209, 55, .5) !important
 }
 
-#mainNav {
-	background-color: #212529
-}
+
 
 #mainNav .navbar-toggler {
 	font-size: 12px;
@@ -341,7 +339,7 @@ img::-moz-selection {
 
 #mainNav .navbar-brand.active, #mainNav .navbar-brand:active, #mainNav .navbar-brand:focus,
 	#mainNav .navbar-brand:hover {
-	color: #fec503
+	color: red;
 }
 
 #mainNav .navbar-nav .nav-item .nav-link {
@@ -363,8 +361,8 @@ img::-moz-selection {
 @media ( min-width :992px) {
 	#mainNav {
 		padding-top: 25px;
-		padding-bottom: 25px;
-		transition: padding-top .3s, padding-bottom .3s;
+		padding-bottom: 10px;
+		transition: padding-top .3s, padding-bottom .5s;
 		border: none;
 		background-color: transparent
 	}
@@ -373,17 +371,22 @@ img::-moz-selection {
 		transition: all .3s
 	}
 	#mainNav .navbar-nav .nav-item .nav-link {
-		padding: 1.1em 1em !important;
+		padding: 0.1em 1em !important;
 		color:white;
+		margin-top:5px;
 	}
 	#mainNav.navbar-shrink {
 		padding-top: 0;
-		padding-bottom: 0;
-		background-color: #212529
+		background-color: #212529;
+
 	}
-	#mainNav.navbar-shrink .navbar-brand {
-		font-size: 1.25em;
-		padding: 12px 0
+	#mainNav.navbar-shrink .navbar-brand:hover {
+		
+		color: #fed136;
+	}
+
+	#mainNav.navbar-shrink .navbar-nav .nav-item .nav-link:hover,#mainNav.navbar-shrink .navbar-nav .nav-item .nav-link.active {
+		color: #fed136;
 	}
 }
 
@@ -468,8 +471,8 @@ header.masthead {
 }
 
 header.masthead .intro-text {
-	padding-top: 100px;
-	padding-bottom: 100px;
+	padding-top: 10px;
+	padding-bottom: 10px;
 	
 }
 
@@ -998,5 +1001,5 @@ ul.social-buttons li a {
 
 ul.social-buttons li a:active, ul.social-buttons li a:focus, ul.social-buttons li a:hover
 	{
-	color: red
+	color: #007bff;
 }

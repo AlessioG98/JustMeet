@@ -26,7 +26,8 @@
 		<!-- Services -->
 	<section class="page-section" id="services">
 		<div class="container">
-			<div class="row">
+			<div class="row" style="
+			padding-top: 100px;">
 				<div class="col-lg-12 text-center">
 					<h2 class="section-heading text-uppercase">Dimmi di pi&ugrave;</h2>
 					<h3 class="section-subheading text-muted">potrebbe piacermi ;)</h3>

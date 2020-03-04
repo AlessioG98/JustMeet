@@ -19,9 +19,13 @@
 		<div class="container">
 			<div class="intro-text">
 				<div class="form-group row">
+					<div class="card col-12 col-5">
+						<div class="card-body">
 					<h2 class="form-signin col-12" style="padding:5%;">Risultati della ricerca:</h2>
 					<c:if test="${searchResults.size()==0}">
 						<h4 class="col-12">Nessun evento trovato, riprova</h4>
+							</div>
+						</div>
 					</c:if>
 					<form:form method="POST" modelAttribute="searchResults"
 						class="form-signin row" style="place-content: center;">
@@ -34,6 +38,8 @@
 									<p class="card-text">${event.dataEvento}</p>
 									<a href="eventDetails?id=${event.id}"
 										class="btn btn-lg btn-primary btn-block">Dettagli</a>
+									</div>
+								</div>
 								</div>
 							</div>
 							<div class="col-1"></div>

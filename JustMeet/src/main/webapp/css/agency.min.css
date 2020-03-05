@@ -33,6 +33,9 @@ h1, h2, h3, h4, h5, h6 {
 		Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji',
 		'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
 }
+.h2, h2{
+	font-size: 4rem;
+}
 
 .page-section {
 	padding: 100px 0;
@@ -421,8 +424,7 @@ header.masthead {
 }
 
 .form-group2 {
-	margin-bottom: 1rem;
-	margin-top: -rem;
+	margin-bottom: 4rem;
 	max-width: fit-content;
 }
 

@@ -45,11 +45,11 @@
 									placeholder="Descrizione" autofocus="true"></form:input>
 							</div>
 						</spring:bind>
-						<form:label path="descrizione">Citt�</form:label>
+						<form:label path="descrizione">Citt&agrave;</form:label>
 						<spring:bind path="descrizione">
 							<div class="form-group ${status.error ? 'has-error' : ''}">
 								<form:input type="text" path="citta" class="form-control"
-									placeholder="Città" autofocus="true"></form:input>
+									placeholder="Citt&agrave;" autofocus="true"></form:input>
 							</div>
 						</spring:bind>
 						<form:label path="categoria">Categoria</form:label>

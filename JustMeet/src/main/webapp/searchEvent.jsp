@@ -52,11 +52,11 @@
 								placeholder="DataEvento" autofocus="true"></form:input>
 						</div>
 					</spring:bind>
-					<button class="btn btn-lg btn-primary btn-block col-12" type="submit" style="align:center">Vai</button>
+					<button class="btn btn-lg btn-primary btn-block col-12" type="submit" styles="align:center">Vai</button>
 					</form:form>
-					
+					<div class="row" ></div>
 					<form:form method="POST" modelAttribute="showAllEvent"
-						class="form-signin row" style="justify-content: center;">
+						class="form-signin row" styles="justify-content: center; padding-top:110px;">
 						<c:forEach var="event" items="${showAllEvent}">
 						<div class="card col-5">
 							<div class="card-body">

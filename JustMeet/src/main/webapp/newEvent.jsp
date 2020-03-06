@@ -7,8 +7,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="utf-8">
-
+	<meta charset="UTF-8">
+	<meta http-equiv="Content-type" content="text/html; charset=UTF-8">
 <title>Nuovo Evento</title>
 </head>
 <body>
@@ -39,10 +39,10 @@
 							</div>
 						</spring:bind>
 
-						<form:label path="descrizione">Citt�</form:label>
+						<form:label path="descrizione">Citt&agrave;</form:label>
 						<spring:bind path="descrizione">
 							<div class="form-group2 ${status.error ? 'has-error' : ''}">
-								<form:input type="text" path="citta" class="form-control"
+								<form:input type="text" path="Citta" class="form-control"
 									placeholder="Città" autofocus="true"></form:input>
 							</div>
 						</spring:bind>
@@ -118,7 +118,7 @@
 							</div>
 						</spring:bind>
 						<form:label path="qtaCauzione" id="lblQtaCauzione"
-									style="visibility: hidden;">Quantità cauzione</form:label>
+									style="visibility: hidden;">Quantit&agrave; cauzione</form:label>
 						<spring:bind path="qtaCauzione">
 							<div class="form-group2 ${status.error ? 'has-error' : ''}">
 								<form:input type="number" step="0.01" min="0" value="0" path="qtaCauzione" class="form-control"

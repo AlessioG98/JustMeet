@@ -16,34 +16,29 @@
 	<%@include file="assets/header.html"%>
 	<!-- Header -->
 	<header class="masthead">
-		<div class="container">
-			<div class="intro-text" align="center">
-				<div class="form-group2" >
-          <h2 class="form-signin">Eventi Partecipati: </h2>
+		<div class="container" style="padding: 10%;">
+          			<h2 class="col-12">Eventi Partecipati: </h2>
 					<c:if test="${ePartecipated.size()==0}">
-	<h4 >Nessun Evento</h4>
-	</c:if>
-    <div class="form-group">
-        <form:form method="GET" modelAttribute="ePartecipated" class="form-signin">
-        <c:forEach var="event" items="${ePartecipated}">
- 	<div class="card">
- 	<div class="card-body">
-		<h4 class="card-title"> ${event.titolo}</h4>
-		<p class="card-text">${event.categoria}</p>
-		<p class="card-text">${event.dataEvento}</p>
-		<p class="card-text">${event.id}</p>
-   		<a href="removeRequest?id=${event.id}" class="btn btn-lg btn-primary btn-block">Annulla Partecipazione</a>              
-   		
-       		
-      
-  </div>
-  </div>
-  </c:forEach>
-  </form:form>
-</div>
-</div>
-</div>
-</header>
+						<h4 >Nessun Evento</h4>
+					</c:if>
+						  <form:form method="GET" modelAttribute="ePartecipated" 
+						  			class="row" style="justify-content: center;">
+      			 			<c:forEach var="event" items="${ePartecipated}">
+								<div class="col-1"></div>
+								<div class="card col-4">
+									<div class="card-body">
+										<h4 class="card-title"> ${event.titolo}</h4>
+										<p class="card-text">${event.categoria}</p>
+										<p class="card-text">${event.dataEvento}</p>
+										<p class="card-text">${event.id}</p>
+										<a href="removeRequest?id=${event.id}" class="btn btn-lg btn-primary btn-block">Annulla Partecipazione</a>              
+									</div>
+								  </div>
+								  <div class="col-1"></div>
+  							</c:forEach>
+  						</form:form>
+		</div>
+	</header>
 <%@include file="assets/footer.html"%>
 </body>
 </html>

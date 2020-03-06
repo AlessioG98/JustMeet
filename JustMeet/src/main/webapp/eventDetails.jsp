@@ -16,11 +16,11 @@
 	<%@include file="assets/header.html"%>
 	<!-- Header -->
 	<header class="masthead">
-		<div class="container">
-			<div class="intro-text">
-				<div class="form-group2 row" style="justify-content: center;">
-					<div class="col-2"></div>
-					<div class="card col-8">
+		<div class="container" style="padding: 10%;">
+			<h2 class="col-12">Dettagli evento</h2>
+				<div class="row justify-content-md-center">
+					<div class="col-3"></div>
+					<div class="card col-6">
 						<div class="card-body">
 							<h4 class="card-title">Titolo: ${eventDetail.titolo}</h4>
 							<p class="card-text">Categoria: ${eventDetail.categoria}</p>
@@ -34,7 +34,7 @@
 								partecipazione</a>
 						</div>
 					</div>
-					<div class="col-2"></div>
+					<div class="col-3"></div>
 				</div>
 			</div>
 		</div>

@@ -23,14 +23,16 @@
 	<!-- Header -->
 	<header class="masthead">
 		<div class="container">
-			<div class="intro-text">
-
+			<div class="intro-text" align="center">
 				<c:if test="${mySearchResult.size()==0}">
 					<h4>Nessun Evento</h4>
 				</c:if>
 				<div class="form-group2">
 					<form:form method="POST" modelAttribute="modifyEvent"
 						class="form-signin">
+						<h2 class="form-signin">Modifica evento</h2>
+						<p></p>
+						<p></p>
 						<form:label path="titolo">Titolo</form:label>
 						<spring:bind path="titolo">
 							<div class="form-group ${status.error ? 'has-error' : ''}">

@@ -28,7 +28,7 @@
 							<p class="card-text">Numero Partecipanti: ${countPartecipated}</p>
 							<p class="card-text">Prezzo: ${eventDetail.prezzo}</p>
 							<p class="card-text">Cauzione: ${eventDetail.cauzione}</p>
-							<p class="card-text">Quantità cauzione: ${eventDetail.qtaCauzione}</p>
+							<p class="card-text">Valore cauzione: ${eventDetail.qtaCauzione}</p>
 							<a href="addRequest?id=${eventDetail.id}"
 								class="btn btn-lg btn-primary btn-block">Invia richiesta di
 								partecipazione</a>

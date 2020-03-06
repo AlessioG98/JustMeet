@@ -23,18 +23,15 @@
 	<!-- Header -->
 	<header class="masthead">
 		<div class="container" style="padding: 10%;">
-			<!--<<div class="intro-text row">-->
-	
 			<c:if test="${mySearchResult.size()==0}">
 				<h4 class="col-12">Nessun Evento</h4>
 			</c:if>
-				<!--<div class="form-group">-->
-					<form:form method="GET" modelAttribute="mySearchResult" 
-								class="row" style="justify-content: center;"> <!--form-signin-->
-					<h2 class="col-12">I miei eventi: </h2>
-					<div class="col-1"></div>
+				<form:form method="GET" modelAttribute="mySearchResult" 
+					class="row" style="justify-content: center;">
+				<h2 class="col-12">I miei eventi: </h2>
 					<c:forEach var="event" items="${mySearchResult}">
-						<div class="card col-10 col-4">
+						<div class="col-1"></div>
+						<div class="card col-4">
 							<div class="card-body">
 								<h4 class="card-title" > ${event.titolo}</h4>
 								<p class="card-text">${event.categoria}</p>
@@ -45,11 +42,9 @@
 								<a href="eventDetails?id=${event.id}" class="btn btn-lg btn-primary btn-block">Dettagli Evento</a>              
 							</div>
 						</div>
-						<div class="col-1"></div>
+					<div class="col-1"></div>
 					</c:forEach>
-					</form:form>
-				<!--</div>-->
-			<!--<</div>-->
+				</form:form>
 		</div>
 	</header>
 	

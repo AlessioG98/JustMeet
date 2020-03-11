@@ -56,7 +56,6 @@ public class EventController {
         }
 		User u = userService.findByUsername(principal.getName());
 		eventForm.setOwner(u.getUsername());
-		eventForm.setId(eventForm.getId()); //?
 		eventService.save(eventForm);
 		return "redirect:/modifySummary.jsp";
 	}
@@ -82,7 +81,6 @@ public class EventController {
 		Event e= eventService.findById(id);
 		model.addAttribute("eventDetail", eventService.showDetails(id).get());
 		model.addAttribute("countPartecipated", eUService.countByEvent(e));
-		System.out.println(eUService.countByEvent(e));
 		return ("eventDetails");
 	}
 

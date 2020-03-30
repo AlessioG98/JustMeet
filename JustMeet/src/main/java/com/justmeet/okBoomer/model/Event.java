@@ -59,7 +59,9 @@ public class Event {
 	private float prezzo;
     @Column(name="cauzione") 
 	private boolean cauzione;
-	//private float pcauzione=0;
+    
+    @Column(name="qtaCauzione")
+	private float qtaCauzione;
     @Column(name="scadenzaPagamento") 
 	private Date scadenzaPagamento;
     @Column(name="citta")
@@ -134,6 +136,14 @@ public class Event {
 
 	public void setCauzione(boolean cauzione) {
 		this.cauzione = cauzione;
+	}
+
+	public float getQtaCauzione() {
+		return qtaCauzione;
+	}
+
+	public void setQtaCauzione(float cauzione) {
+		this.qtaCauzione = cauzione;
 	}
 
 	public Date getScadenzaPagamento() {

@@ -56,14 +56,14 @@ public class EventController {
         }
 		User u = userService.findByUsername(principal.getName());
 		eventForm.setOwner(u.getUsername());
-		eventForm.setId(eventForm.getId()); //?
 		eventService.save(eventForm);
-		return "index";
+		return "redirect:/modifySummary.jsp";
 	}
 
 	@GetMapping("/searchEvent")
 	public String searchEventBy(Model model) {
 		model.addAttribute("searchForm", new Event());
+		model.addAttribute("showAllEvent", eventService.getAllEvent());
 		return "searchEvent";
 	}
 
@@ -81,7 +81,6 @@ public class EventController {
 		Event e= eventService.findById(id);
 		model.addAttribute("eventDetail", eventService.showDetails(id).get());
 		model.addAttribute("countPartecipated", eUService.countByEvent(e));
-		System.out.println(eUService.countByEvent(e));
 		return ("eventDetails");
 	}
 
@@ -103,13 +102,15 @@ public class EventController {
 	public String modifyEvent(@ModelAttribute("modifyEvent") Event modifyEvent, Principal user) {
 		modifyEvent.setOwner(user.getName());
 		eventService.save(modifyEvent);
-		return "index";
+		return "redirect:/modifySummary.jsp";
+		
 	}
 
 	@GetMapping("/deleteEvents")
-	public String deleteEvents(Model model, @RequestParam long id) {
+	public String deleteEvents(Model model, @RequestParam long id,Principal user) {
+		eUService.delete(id, user);
 		eventService.deleteById(id);
-		return "redirect:/index.jsp";
+		return "redirect:/modifySummary.jsp";
 	}
 	
 	

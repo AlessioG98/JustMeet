@@ -75,4 +75,10 @@ public class EventServiceImpl implements EventService {
 		return repository.findById(id);
 	}
 
+	@Override
+	public List<Event> getAllEvent() {
+		// TODO Auto-generated method stub
+		return repository.findAll();
+	}
+
 }
